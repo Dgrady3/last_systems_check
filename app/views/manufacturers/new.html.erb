@@ -1,0 +1,24 @@
+<%= form_for Manufacturer.new do |f| %>
+
+  <% if @manufacturer.errors.any? %>
+    <p><%= "#{@manufacturers.errors.count} prevented your matchup from being saved:" %></p>
+    <ul>
+      <% @manufacturer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+
+  <%= f.submit "Submit" %>
+
+<% end %>

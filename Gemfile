@@ -13,8 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-gem 'factory_girl'
-
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -29,11 +27,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring'
 
 group :development, :test do
+  gem "factory_girl_rails"
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"
   gem "pry-rails"
-  gem "better_errors"
 end
 
 # Use ActiveModel has_secure_password
