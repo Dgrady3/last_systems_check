@@ -14,7 +14,8 @@ class ManufacturersController < ApplicationController
     if @manufacturer.save
       redirect_to manufacturers_path, notice: "Your record has been created successfully!"
     else
-      render "manufacturer/new"
+      flash[:notice] = "Your record could not be completed"
+      render "new"
     end
   end
 
