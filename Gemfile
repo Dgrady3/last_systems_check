@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.1.0"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -32,6 +33,10 @@ group :development, :test do
   gem "capybara"
   gem "launchy"
   gem "pry-rails"
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
 
 # Use ActiveModel has_secure_password
