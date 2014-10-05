@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Records a car manufacturer", %Q{
+feature "Records a car manufacturer", %{
   As a car salesperson
   I want to record a car manufacturer
   So that I can keep track of the types of cars found in the lot
@@ -28,7 +28,6 @@ feature "Records a car manufacturer", %Q{
   end
 
   scenario "Salesperson can't submit an empty form" do
-    manufacturer = FactoryGirl.create(:manufacturer)
     visit manufacturers_path
     click_on "Create a record for a car manufacturer!"
     click_on "Submit"

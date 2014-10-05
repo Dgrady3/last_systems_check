@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Records a newly aquired car", %Q{
+feature "Records a newly aquired car", %{
   As a car salesperson
   it want to record a newly acquired create
   So that I can list it in my lot
