@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_filter :prepare_car
+  # before_filter :prepare_car
 
   def index
     @cars = Car.all
@@ -23,7 +23,7 @@ class CarsController < ApplicationController
     params.require(:car).permit(:manufacturer_id, :color, :year, :mileage, :description)
   end
 
-  def prepare_car
-    @manufacturers = Manufacturer.all
-  end
+  # def prepare_car
+  #   @manufacturers = Manufacturer.all
+  # end
 end

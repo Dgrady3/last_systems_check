@@ -1,9 +1,10 @@
 <h3>Manufacturers</h3>
 
 <%= link_to "Create a record for a car manufacturer!", new_manufacturer_path %>
-
 <ul>
   <% @manufacturers.each do |manufacturer| %>
     <li><%= "#{ manufacturer.name } - #{ manufacturer.country }" %></li>
   <%end%>
 </ul>
+<br>
+<%= link_to "Click here to add a car to a company", new_car_path %>

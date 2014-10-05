@@ -8,7 +8,7 @@ FactoryGirl.define do
 
   factory :car do
     manufacturer
-    color "some color"
+    color "That blue thoughhhhh"
     year "1921"
     mileage "123432"
   end

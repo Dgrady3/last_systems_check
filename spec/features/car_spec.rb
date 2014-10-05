@@ -6,7 +6,7 @@ feature "Records a newly aquired car", %Q{
   So that I can list it in my lot
   } do
 
-  scenario "Salesperson specifies a manufacturer, color, year, and mileage" do
+  scenario "Salesperson fills out form correctly" do
     visit cars_path
     car = FactoryGirl.create(:car)
     manufacturer = FactoryGirl.build(:manufacturer)

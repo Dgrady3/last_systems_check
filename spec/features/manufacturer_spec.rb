@@ -35,7 +35,3 @@ feature "Records a car manufacturer", %Q{
     expect(page).to have_content "Your record could not be completed"
   end
 end
-
-
-
-
