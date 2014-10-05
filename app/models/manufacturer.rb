@@ -1,3 +1,6 @@
 class Manufacturer < ActiveRecord::Base
-  validates :name, :country, presence: true
+  has_many :cars
+
+  validates :name, presence: true, uniqueness: { message: "That Manufacturer already exists!" }
+  validates :country, presence: true
 end

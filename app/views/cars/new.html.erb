@@ -1,0 +1,41 @@
+<%= form_for Car.new do |f| %>
+
+  <% if @car.errors.any? %>
+    <p><%= "#{@car.errors.count} prevented your record from being saved:" %></p>
+    <ul>
+      <% @car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :manufacturer_id %>
+  <%= f.collection_select :manufacturer_id, Manufacturer.all.order(:name), :id, :name, include_blank: true %>
+  </div>
+
+  <div>
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+
+   <div>
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+
+  <div>
+    <%= f.label :mileage %><br>
+    <%= f.text_field :mileage %>
+  </div>
+
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <%= f.submit "Submit" %>
+
+
+<% end %>
+

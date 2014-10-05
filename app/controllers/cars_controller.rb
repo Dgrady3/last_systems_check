@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  before_filter :prepare_car
 
   def index
     @cars = Car.all
@@ -14,11 +15,15 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to cars_path, notice: "Your record has been created successfully!"
     else
-      render "car/new"
+      render "new"
     end
   end
 
   def car_params
-    params.require(:car).permit(:maufacturer_id, :color, :year, :mileage)
+    params.require(:car).permit(:manufacturer_id, :color, :year, :mileage, :description)
+  end
+
+  def prepare_car
+    @manufacturers = Manufacturer.all
   end
 end

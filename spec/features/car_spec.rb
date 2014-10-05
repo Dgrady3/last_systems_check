@@ -9,8 +9,9 @@ feature "Records a newly aquired car", %Q{
   scenario "Salesperson specifies a manufacturer, color, year, and mileage" do
     visit cars_path
     car = FactoryGirl.create(:car)
-    click_on "Create a record for a new car!"
-    fill_in "Manufacturer", with: car.manufacturer
+    manufacturer = FactoryGirl.build(:manufacturer)
+    click_on "Create a record for new a car!"
+    select manufacturer.name, from: "Manufacturer"
     fill_in "Color", with: car.color
     fill_in "Year", with: car.year
     fill_in "Mileage", with: car.mileage
