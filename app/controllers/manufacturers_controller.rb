@@ -19,8 +19,6 @@ class ManufacturersController < ApplicationController
     end
   end
 
-
-
   def manufac_params
     params.require(:manufacturer).permit(:name, :country)
   end

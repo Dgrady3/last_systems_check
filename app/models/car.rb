@@ -1,5 +1,8 @@
 class Car < ActiveRecord::Base
-  validates :manufacturer_id, :mileage, numericality: { only_integer: true} presence: true
-  validates_numericality_of :year, :greater_than_or_equal_to 1920
-  validates :color, presence: true
+  belongs_to :manufacturer
+
+  validates :manufacturer_id, presence: true
+  validates :color,presence: true
+  validates :mileage, numericality: { only_integer: true}
+  validates :year, numericality:  {greater_than_or_equal_to: 1920 }
 end
