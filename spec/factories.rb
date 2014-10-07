@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :manufacturer do
     id 4
     name "Joeshmo"

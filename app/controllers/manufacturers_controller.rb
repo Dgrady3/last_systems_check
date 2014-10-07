@@ -9,7 +9,7 @@ class ManufacturersController < ApplicationController
   end
 
   def create
-    @manufacturer = Manufacturer.new(manufac_params)
+    @manufacturer = Manufacturer.new(manufacturer_params)
 
     if @manufacturer.save
       redirect_to manufacturers_path, notice: "Your record has been created successfully!"
@@ -19,7 +19,9 @@ class ManufacturersController < ApplicationController
     end
   end
 
-  def manufac_params
+  private
+
+  def manufacturer_params
     params.require(:manufacturer).permit(:name, :country)
   end
 end
